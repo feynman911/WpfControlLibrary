@@ -1,0 +1,29 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             mc:Ignorable="d" x:Class="WpfControlLibrary.MeterSlide"             
+             d:DesignWidth="410.883" d:DesignHeight="93.513">
+    <Grid>
+        <Border BorderThickness="10" CornerRadius="10" ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderBrush="#FF17162B">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FF979797" Offset="0"/>
+                    <GradientStop Color="#FF979797" Offset="1"/>
+                    <GradientStop Color="#FFD6D6D6" Offset="0.152"/>
+                    <GradientStop Color="#FFD8D8D8" Offset="0.855"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid x:Name="CenterMark" HorizontalAlignment="Center" Width="5" ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="#7F000000" Margin="0"/>
+                <Grid x:Name="DisplayArea" SizeChanged="DisplayArea_SizeChanged" ClipToBounds="True">
+                    <Grid x:Name="Memoriban" ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0"/>
+                    <Grid x:Name="Mojiban" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+                </Grid>
+            </Grid>
+        </Border>
+
+    </Grid>
+</UserControl>

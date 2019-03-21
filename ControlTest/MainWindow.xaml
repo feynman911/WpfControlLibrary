@@ -1,0 +1,26 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ControlTest"
+        xmlns:WpfControlLibrary="clr-namespace:WpfControlLibrary;assembly=WpfControlLibrary" x:Class="ControlTest.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="480" Width="640">
+    <Grid Background="#FF2E1F1F">
+        <Grid VerticalAlignment="Top" Margin="20,10,20,0">
+            <WpfControlLibrary:MeterSlide x:Name="meterSlide" Height="100" VerticalAlignment="Top" Margin="0" HorizontalAlignment="Left" Width="388"/>
+            <Slider x:Name="slider" HorizontalAlignment="Right" Margin="0,10,0,0" VerticalAlignment="Top" Height="28" Width="193" Maximum="1000" Minimum="-1000" Delay="2000" LargeChange="100" SmallChange="10" TickFrequency="100" TickPlacement="Both" Interval="200" Value="{Binding DispValueAnime, ElementName=meterSlide}"/>
+            <StackPanel Margin="0,50,0,0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="DispValueAnimation" VerticalAlignment="Top" Foreground="White" Margin="0,0,20,0"/>
+                <TextBox x:Name="textBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0" MinWidth="50" TextAlignment="Right" Text="{Binding DispValueAnime, ElementName=meterSlide, Mode=TwoWay, StringFormat=\{0:F2\}}"/>
+            </StackPanel>
+            <StackPanel Margin="0,74,0,0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="DispValue" VerticalAlignment="Top" Foreground="White" Margin="0,0,20,0"/>
+                <TextBlock x:Name="textBlock" TextWrapping="Wrap" Background="#FF6E1B1B" Foreground="White" MinWidth="50" Text="{Binding DispValue, ElementName=meterSlide, StringFormat=\{0:F2\}}" TextAlignment="Right"/>
+            </StackPanel>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,105,0,0" Height="120" Width="378" Foreground="White"><Run Text="ユーザーコントロール作成のヒント"/><LineBreak/><Run Text="1.目盛り等繰り返し部分はXAMLよりもコードで書いた方が楽。"/><LineBreak/><Run Text="2"/><Run Text=".目盛りははみ出して生成し、スライドさせるだけで再作成しない。"/><LineBreak/><Run Text="　　毎回表示エリアを計算して目盛りを再作成しては負荷が大きい。"/><LineBreak/><Run Text="3"/><Run Text=".文字を表示するTextBlockもスライドさせるだけで再利用する。"/><LineBreak/><Run Text="　　L"/><Run Text="inq"/><Run Text="を参照すると"/><Run Text="OfTypeで希望のTypeの子要素を選択できる"/><Run Text="。"/><LineBreak/><Run Text="4"/><Run Text=".アニメーションの"/><Run Text="Durationは自然に見えるように調整する。"/><LineBreak/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/></TextBlock>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="0" Height="120" Width="193" Foreground="White"><Run Text="スライダーの動きにコントロールの動きが追従しない時には、スライダー"/><Run Text="停止後"/><Run Text="のバインド"/><Run Text="にしてもいい。"/><LineBreak/><Run Text="Binding "/><Run Text="DisplayAnime, Delay = 300,"/><LineBreak/><Run Text="の様にバインディングの中にDelayを記入すると、スライダー停止後その時間経過後にバインドが発行される"/><LineBreak/><Run Foreground="Blue" FontSize="12.6666666666667" FontFamily="MS Gothic" Text=""/></TextBlock>
+        </Grid>
+    </Grid>
+</Window>

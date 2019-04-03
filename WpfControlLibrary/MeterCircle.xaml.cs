@@ -94,6 +94,7 @@ namespace WpfControlLibrary
             var nf = (double)e.NewValue;
             MeterCircle obj = (MeterCircle)target;
             obj.DispValue.Value = (nf - obj.MeterMin) / (obj.MeterMax - obj.MeterMin) * 270.0 - 135.0;
+            obj.MValue.Text = nf.ToString("F2");
         }
 
         // 値の強制。整形したり並べ替えたり。これが呼ばれた後で、PropertyChangedCallbackが呼ばれる

@@ -48,10 +48,17 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="MeterCircle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MeterSlide.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="MeterCircle.xaml.cs">
+      <DependentUpon>MeterCircle.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MeterSlide.xaml.cs">
       <DependentUpon>MeterSlide.xaml</DependentUpon>
     </Compile>

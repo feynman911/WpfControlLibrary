@@ -30,6 +30,7 @@
             <WpfControlLibrary:MeterCircle x:Name="meterCircle" HorizontalAlignment="Left" Height="171" VerticalAlignment="Top" Width="176"/>
             <Slider HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="30" Margin="195,14,0,0" Maximum="135" Minimum="-135" SmallChange="1" LargeChange="9" TickPlacement="Both" TickFrequency="45" Value="{Binding MeterValue, ElementName=meterCircle}"/>
             <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="0,0,40,29" Height="84" Width="355" Foreground="White"><Run Text="XAMLでデザイン"/><LineBreak/><Run Text="バインド用のディペンデンシープロパティーのみコードビハインドに記述"/><LineBreak/><Run Text="ダミーのスライダーを埋め込んでおくとデバッグに便利"/><LineBreak/><Run Text="完成したらHIDDENにして隠せばいい"/><LineBreak/><Run/><LineBreak/></TextBlock>
+            <WpfControlLibrary:ToggleSwitch HorizontalAlignment="Left" Height="18" VerticalAlignment="Top" Width="32" Margin="540,4,0,0" TrackBackgroundOnColor="#FF7887E8" TrackBackgroundOffColor="#FFC96464" CircleBackgroundColor="#FF4F1C09"/>
         </Grid>
     </Grid>
 </Window>

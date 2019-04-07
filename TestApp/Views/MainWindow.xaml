@@ -1,0 +1,47 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:WpfControlLibrary="clr-namespace:WpfControlLibrary;assembly=WpfControlLibrary" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:ViewModels="clr-namespace:TestApp.ViewModels" 
+    mc:Ignorable="d" x:Class="TestApp.Views.MainWindow"
+    prism:ViewModelLocator.AutoWireViewModel="True" 
+    Title="{Binding Title}" Height="480" Width="640" 
+    d:DataContext="{d:DesignInstance {x:Type ViewModels:MainWindowViewModel}}">
+    <Grid Background="#FF2E1F1F">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="248*"/>
+            <RowDefinition Height="201*"/>
+        </Grid.RowDefinitions>
+        <Grid VerticalAlignment="Top" Margin="20,10,20,0" Height="225">
+            <WpfControlLibrary:MeterSlide x:Name="meterSlide" Height="100" VerticalAlignment="Top" Margin="0" HorizontalAlignment="Left" Width="388"/>
+            <Slider x:Name="slider" HorizontalAlignment="Right" Margin="0,10,0,0" VerticalAlignment="Top" Height="30" Width="200" Maximum="1000" Minimum="-1000" Delay="2000" LargeChange="100" SmallChange="10" TickFrequency="100" TickPlacement="Both" Interval="200" Value="{Binding DispValueAnime, Delay=300, ElementName=meterSlide}"/>
+            <StackPanel Margin="0,50,0,0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="DispValueAnimation" VerticalAlignment="Top" Foreground="White" Margin="0,0,20,0"/>
+                <TextBox x:Name="textBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0" MinWidth="50" TextAlignment="Right" Text="{Binding DispValueAnime, ElementName=meterSlide, Mode=TwoWay, StringFormat=\{0:F2\}}"/>
+            </StackPanel>
+            <StackPanel Margin="0,74,0,0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="DispValue" VerticalAlignment="Top" Foreground="White" Margin="0,0,20,0"/>
+                <TextBlock x:Name="textBlock" TextWrapping="Wrap" Background="#FF6E1B1B" Foreground="White" MinWidth="50" Text="{Binding DispValue, ElementName=meterSlide, StringFormat=\{0:F2\}}" TextAlignment="Right"/>
+            </StackPanel>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,105,0,0" Height="120" Width="378" Foreground="White"><Run Text="ユーザーコントロール作成のヒント"/><LineBreak/><Run Text="1.目盛り等繰り返し部分はXAMLよりもコードで書いた方が楽。"/><LineBreak/><Run Text="2"/><Run Text=".目盛りははみ出して生成し、スライドさせるだけで再作成しない。"/><LineBreak/><Run Text="　　毎回表示エリアを計算して目盛りを再作成しては負荷が大きい。"/><LineBreak/><Run Text="3"/><Run Text=".文字を表示するTextBlockもスライドさせるだけで再利用する。"/><LineBreak/><Run Text="　　L"/><Run Text="inq"/><Run Text="を参照すると"/><Run Text="OfTypeで希望のTypeの子要素を選択できる"/><Run Text="。"/><LineBreak/><Run Text="4"/><Run Text=".アニメーションの"/><Run Text="Durationは自然に見えるように調整する。"/><LineBreak/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/></TextBlock>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="0" Height="120" Width="193" Foreground="White"><Run Text="スライダーの動きにコントロールの動きが追従しない時には、スライダー"/><Run Text="停止後"/><Run Text="のバインド"/><Run Text="にしてもいい。"/><LineBreak/><Run Text="Binding "/><Run Text="DisplayAnime, Delay = 300,"/><LineBreak/><Run Text="の様にバインディングの中にDelayを記入すると、スライダー停止後その時間経過後にバインドが発行される"/><LineBreak/><Run Foreground="Blue" FontSize="12.6666666666667" FontFamily="MS Gothic" Text=""/></TextBlock>
+        </Grid>
+        <Grid Grid.Row="1" Margin="20,10,200,10">
+            <WpfControlLibrary:MeterCircle x:Name="meterCircle" HorizontalAlignment="Left" Height="171" VerticalAlignment="Top" Width="176"/>
+            <Slider HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="30" Margin="195,14,0,0" Maximum="135" Minimum="-135" SmallChange="1" LargeChange="9" TickPlacement="Both" TickFrequency="45" Value="{Binding MeterValue, ElementName=meterCircle}"/>
+            <TextBlock TextWrapping="Wrap" Margin="195,70,10,0" Foreground="White"><Run Text="XAMLでデザイン"/><LineBreak/><Run Text="バインド用のディペンデンシープロパティーのみコードビハインドに記述"/><LineBreak/><Run Text="ダミーのスライダーを埋め込んでおくとデバッグに便利"/><LineBreak/><Run Text="完成したらHIDDENにして隠せばいい"/><LineBreak/><Run/><LineBreak/></TextBlock>
+        </Grid>
+        <Grid>
+            <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+        </Grid>
+        <StackPanel Margin="450,20,10,10" Grid.Row="1">
+            <WpfControlLibrary:ToggleSwitch HorizontalAlignment="Left" Height="18" VerticalAlignment="Top" Width="32" Margin="0,4,0,10" TrackBackgroundOnColor="#FF7887E8" TrackBackgroundOffColor="#FFC96464" CircleBackgroundColor="#FF4F1C09" IsOn="{Binding Ts_Status}"/>
+            <CheckBox Content="STATUS" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Margin="0,0,0,10" IsChecked="{Binding Process_Status}" IsEnabled="False"/>
+            <CheckBox Content="Always Fail flag" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Margin="0,0,0,10" IsChecked="{Binding DummyFlag, Mode=TwoWay}"/>
+            <TextBlock TextWrapping="Wrap" Foreground="White" Height="90"><Run Text="トグルスイッチをONして処理が成功するとすると"/><Run Text="STATUSがONする。"/><LineBreak/><Run Text="Fail flag をONしておくと処理は失敗しトグルスイッチは元に戻る"/></TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>

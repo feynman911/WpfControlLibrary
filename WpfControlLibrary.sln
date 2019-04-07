@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Blend for Visual Studio 15
+# Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfControlLibrary", "WpfControlLibrary\WpfControlLibrary.csproj", "{D98A4B84-16EE-47B9-B8A3-E0BC7101E0BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlTest", "ControlTest\ControlTest.csproj", "{5B668977-2EEB-4DE2-998F-9C566AE5D790}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{D0EB4D54-3A23-4BE2-83F0-36D4B83B41FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{D98A4B84-16EE-47B9-B8A3-E0BC7101E0BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D98A4B84-16EE-47B9-B8A3-E0BC7101E0BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D98A4B84-16EE-47B9-B8A3-E0BC7101E0BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5B668977-2EEB-4DE2-998F-9C566AE5D790}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B668977-2EEB-4DE2-998F-9C566AE5D790}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B668977-2EEB-4DE2-998F-9C566AE5D790}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B668977-2EEB-4DE2-998F-9C566AE5D790}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0EB4D54-3A23-4BE2-83F0-36D4B83B41FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0EB4D54-3A23-4BE2-83F0-36D4B83B41FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0EB4D54-3A23-4BE2-83F0-36D4B83B41FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0EB4D54-3A23-4BE2-83F0-36D4B83B41FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

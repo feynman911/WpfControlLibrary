@@ -129,6 +129,7 @@ namespace WpfControlLibrary
         }
         #endregion
 
+        //BindsTwoWayByDefaultを設定する事
         #region ******************************* IsOn
         [Category("Switch")]
         [Description("Switch status")]
